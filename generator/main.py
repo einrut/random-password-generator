@@ -19,10 +19,10 @@ while True:
     if choice == "both":
         lower = upper = True
         break
-    elif choice == "lower" or "lowercase":
+    elif choice == "lower" or "lowercase" or "lower case":
             lower = True
             break
-    elif choice == "upper" or "uppercase":
+    elif choice == "upper" or "uppercase" or "upper case":
             upper = True
             break
     else:
@@ -47,3 +47,4 @@ password = ''.join(random.choice(characters) for _ in range(length))
 
 print("Here's your password!")
 print(password)
+
