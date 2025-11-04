@@ -1,8 +1,15 @@
 import random
 import string
 
-length = int(input("Enter your desired password length: "))
-
+while True:
+    try:
+        length = int(input("Enter your desired password length: "))
+        if length > 0:
+            break
+        else:
+            print("Please enter a positive number!")
+    except ValueError:
+        print("Please enter a number!")
 
 while True:
     print("Use lowercase, uppercase, or both?")
@@ -12,10 +19,10 @@ while True:
     if choice == "both":
         lower = upper = True
         break
-    elif choice == "lower":
+    elif choice == "lower" or "lowercase":
             lower = True
             break
-    elif choice == "upper":
+    elif choice == "upper" or "uppercase":
             upper = True
             break
     else:
@@ -40,3 +47,4 @@ password = ''.join(random.choice(characters) for _ in range(length))
 
 print("Here's your password!")
 print(password)
+
