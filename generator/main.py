@@ -13,24 +13,24 @@ while True:
 
 while True:
     print("Use lowercase, uppercase, or both?")
-    choice = input().lower()
+    choice = input().strip().lower()
 
     lower = upper = False
     if choice == "both":
         lower = upper = True
         break
-    elif choice == "lower" or "lowercase" or "lower case":
+    elif choice in ("lower" , "lowercase" , "lower case"):
             lower = True
             break
-    elif choice == "upper" or "uppercase" or "upper case":
+    elif choice in ("upper" , "uppercase" , "upper case"):
             upper = True
             break
     else:
         print("Invalid input, try again.")
 
 
-numbers = input("Use numbers? (Y/N): ").lower() == "y", "yes"
-specialChar = input("Use special characters? (Y/N): ").lower() == "y", "yes"
+numbers = input("Use numbers? (Y/N): ").strip().lower() in ("y", "yes")
+specialChar = input("Use special characters? (Y/N): ").strip().lower() in ("y", "yes")
 
 
 characters = ""
@@ -47,4 +47,5 @@ password = ''.join(random.choice(characters) for _ in range(length))
 
 print("Here's your password!")
 print(password)
+
 
